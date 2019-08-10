@@ -1,0 +1,18 @@
+{
+  "ret": true,
+  "data": {
+    "swiperList": [{
+      "id": "0001",
+      "imgUrl": "https://eimg.smzdm.com/201908/09/5d4d7ea3832b12359.png"
+    },{
+      "id": "0002",
+      "imgUrl": "https://eimg.smzdm.com/201908/09/5d4d315c2cf841591.png"
+    },{
+      "id": "0003",
+      "imgUrl": "https://eimg.smzdm.com/201908/09/5d4ce33be23383490.png"
+    },{
+      "id": "0004",
+      "imgUrl": "https://eimg.smzdm.com/201908/09/5d4d380ca72f13079.png"
+    }]
+  }
+}

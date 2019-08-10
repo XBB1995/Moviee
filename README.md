@@ -1,29 +1,21 @@
-# smzdm
+# smzdm 张大妈APP页面的Vue项目
 
-## Project setup
-```
-npm install
-```
+## 记录 
+1. 完成footer的制作和跳转 完成首页的基本布局 制作item组件
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 使用到的插件记录或库
+1. vue-awesome-swiper
+2. better-scroll
+3. JSONPlaceholder
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## 开发中遇到的问题及思考
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 字体图标通过v-for遍历展示时，使用模板数据展示无效
++ 给元素加上v-html属性，进行转义显示
+### 路由高亮的方式 路由重定向后高亮丢失的问题
++ 高亮的两种方式
+   1. router自带的router-link-exact-active类，在上面增加样式
+   2. 给属性linkActiveClass赋值自定义的样式MyActive
++ 路由重定向后高亮丢失的解决办法
+   1.
+### 过渡与动画效果 只能依赖于元素的插入、更新或销毁吗
