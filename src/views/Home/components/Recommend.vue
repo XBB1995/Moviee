@@ -65,7 +65,7 @@
             /*height: 0;*/
             /*overflow: hidden;*/
             /*padding-bottom: 40%;*/
-            padding: .2rem 0;
+            padding: .1rem 0;
             .nav-ul {
                 width: 100%;
                 /*height: 100%;*/
@@ -74,7 +74,7 @@
                     display: inline-block;
                     width: 20%;
                     text-align: center;
-                    padding: .1rem 0;
+                    /*padding: .05rem 0;*/
                     p {
                         color: red;
                         font-size: .8rem;

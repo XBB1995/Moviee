@@ -18,11 +18,11 @@
         data() {
             return {
                 footerList: [
-                    {toAddress: '/home', icon: '&#xe796;', title: '首页', name: 'home'},
-                    {toAddress: '/goods', icon: '&#xe78a;', title: '好价', name: 'goods'},
-                    {toAddress: '/community', icon: '&#xe793;', title: '社区', name: 'community'},
-                    {toAddress: '/wiki', icon: '&#xe795;', title: '百科', name: 'wiki'},
-                    {toAddress: '/mine', icon: '&#xe790;', title: '我的', name: 'mine'},
+                    {toAddress: '/home', icon: '&#xe796;', title: '首页'},
+                    {toAddress: '/goods', icon: '&#xe78a;', title: '好价'},
+                    {toAddress: '/community', icon: '&#xe793;', title: '社区'},
+                    {toAddress: '/wiki', icon: '&#xe795;', title: '百科'},
+                    {toAddress: '/mine', icon: '&#xe790;', title: '我的'},
                 ],
             }
         }
@@ -51,7 +51,7 @@
             justify-content: space-around;
             align-items: center;
             .footer-li {
-                &.router-link-exact-active {
+                &.router-link-active {
                     color: #ff464f;
                 }
                 background-color: #fff;

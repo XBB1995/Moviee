@@ -31,6 +31,7 @@
 
 <style scoped lang="scss">
     .home {
-        height: 30rem;
+        /*height: 30rem;*/
+        padding-bottom: 1.5rem;
     }
 </style>
