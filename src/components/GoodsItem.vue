@@ -5,7 +5,7 @@
         </div>
         <div class="item-middle">
             <div class="title">Miiow 猫人 MR207 女士运动内衣</div>
-            <div class="tag">运动服饰热度Top1</div>
+            <Tag class="tag">运动服饰热度Top1</Tag>
             <div class="price">19.8元包邮</div>
             <div class="info">
                 <div class="source">
@@ -13,9 +13,11 @@
                 </div>
                 <div>
                     <span class="iconfont">&#xe78f;</span>
-                    145
+                    <span>145</span>
                 </div>
-                <div>值 74%</div>
+                <div>
+                    <span>值 74%</span>
+                </div>
             </div>
         </div>
         <div class="item-right">
@@ -50,7 +52,7 @@
             /*height: 0;*/
             /*overflow: hidden;*/
             /*padding-bottom: 35%;*/
-            width: 2.6rem;
+            width: 2.4rem;
             /*height: 2.6rem;*/
             /*padding-left: .1rem;*/
             border-radius: .1rem;
@@ -63,32 +65,32 @@
         }
         .item-middle {
             height: 2.6rem;
-            margin-left: .25rem;
+            margin-left: .15rem;
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             .title {
-                font-size: .4rem;
+                font-size: .3rem;
                 font-weight: bold;
                 line-height: .5rem;
-                margin-right: .5rem;
+                margin-right: .4rem;
                 //@include text-ellipsis;
             }
             .tag {
                 background-color: #eee;
                 color: #888;
-                padding: 0 .1rem;
                 line-height: .3rem;
+                height: .3rem;
                 border-radius: .1rem;
-                font-size: .2rem;
-                width: 2rem;
+                width: 2.4rem;
+                text-align: center;
                 @include text-ellipsis;
             }
             .price {
                 color: red;
                 font-weight: bold;
-                font-size: .4rem;
+                font-size: .3rem;
                 @include text-ellipsis;
             }
             .info {
@@ -106,8 +108,8 @@
         .item-del {
             /*float: right;*/
             position: absolute;
-            top: .5rem;
-            right: .5rem;
+            top: .2rem;
+            right: .2rem;
         }
     }
 </style>
