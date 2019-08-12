@@ -1,10 +1,10 @@
 <template>
-    <div class="header">
+    <div class="nav">
         <router-link tag='div' @click.native="handlerLeftClick"
-                     class="header-tag1" to="/home/recommend">
+                     class="nav-tag1" to="/home/recommend">
             <div class="title">推荐</div>
         </router-link>
-        <router-link tag='div' class="header-tag2" to="/home/like" @click.native="handlerRightClick">
+        <router-link tag='div' class="nav-tag2" to="/home/like" @click.native="handlerRightClick">
             <div class="title">关注</div>
         </router-link>
         <div class="footer">
@@ -18,7 +18,7 @@
 
 <script>
     export default {
-        name: "HomeHeader",
+        name: "Homenav",
         data() {
             return {
                 showLeft: true
@@ -44,7 +44,7 @@
     .v-leave-active {
         transition: opacity .4s;
     }
-    .header {
+    .nav {
         height: .8rem;
         width: 100%;
         background-color: #fff;
@@ -55,8 +55,8 @@
         /*display: flex;*/
         /*justify-content: center;*/
         /*align-items: center;*/
-        .header-tag1,
-        .header-tag2 {
+        .nav-tag1,
+        .nav-tag2 {
             /*width: 25%;*/
             display: inline-block;
             position: absolute;
@@ -76,11 +76,11 @@
                 }
             }
         }
-        .header-tag1 {
+        .nav-tag1 {
             left: 35%;
             transform: translateX(-50%);
         }
-        .header-tag2 {
+        .nav-tag2 {
             left: 65%;
             transform: translateX(-50%);
             &:before {
@@ -89,7 +89,7 @@
                 vertical-align: center;
                 text-align: center;
                 position: absolute;
-                left: .8rem;
+                left: .63rem;
                 top: .1rem;
                 line-height: .34rem;
                 width: .6rem;

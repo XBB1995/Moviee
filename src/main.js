@@ -6,16 +6,19 @@ import './assets/styles/reset.css'
 import './assets/styles/border.css'
 import './assets/styles/iconfont.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import iView from 'iview'
-import 'iview/dist/styles/iview.css'
-
-// require styles
 import 'swiper/dist/css/swiper.css'
+// 全局引入
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+// Vant
+import Vant from 'vant'
+import 'vant/lib/index.css'
 
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
-Vue.use(iView)
-
 Vue.config.productionTip = false
+Vue.use(ElementUI)
+Vue.use(Vant)
+
 
 
 new Vue({

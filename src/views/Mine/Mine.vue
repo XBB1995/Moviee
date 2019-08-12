@@ -8,7 +8,7 @@
 
 <script>
     // @ is an alias to /src
-    import MineHeader from '@/views/Mine/components/Header.vue'
+    import MineHeader from '@/components/Header.vue'
     import Footer from '@/components/Footer.vue'
 
     export default {

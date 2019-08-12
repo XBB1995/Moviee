@@ -8,7 +8,7 @@
 
 <script>
     // @ is an alias to /src
-    import WikiHeader from '@/views/Wiki/components/Header.vue'
+    import WikiHeader from '@/components/Header.vue'
     import Footer from '@/components/Footer.vue'
 
     export default {

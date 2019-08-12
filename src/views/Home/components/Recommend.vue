@@ -24,14 +24,7 @@
         data() {
             return {
                 swiperList: [],
-                iconList: [
-                    {toAddress: '/home', icon: '&#xe796;', title: '首页', name: 'home'},
-                    {toAddress: '/goods', icon: '&#xe78a;', title: '好价', name: 'goods'},
-                    {toAddress: '/community', icon: '&#xe793;', title: '社区', name: 'community'},
-                    {toAddress: '/wiki', icon: '&#xe795;', title: '百科', name: 'wiki'},
-                    {toAddress: '/mine', icon: '&#xe790;', title: '我的', name: 'mine'},
-                    {toAddress: '/mine', icon: '&#xe790;', title: '我的', name: 'mine'},
-                ]
+                iconList: []
             }
         },
         components: {
@@ -40,7 +33,7 @@
         },
         methods: {
             getHomeInfo() {
-                axios.get('/mock/index.json')
+                axios.get('https://www.easy-mock.com/mock/5d4f6b52bfbd2538192571c7/smzdm/api/gethomeinfo')
                     .then(this.getHomeInfoSucc)
             },
             getHomeInfoSucc(res) {
@@ -48,6 +41,7 @@
                 if (res.ret && res.data) {
                     const data = res.data
                     this.swiperList = data.swiperList
+                    this.iconList = data.iconList
                 }
             },
         },

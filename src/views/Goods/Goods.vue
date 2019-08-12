@@ -8,7 +8,7 @@
 
 <script>
     // @ is an alias to /src
-    import GoodsHeader from '@/views/Goods/components/Header.vue'
+    import GoodsHeader from '@/components/Header.vue'
     import Footer from '@/components/Footer.vue'
 
     export default {

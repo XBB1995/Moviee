@@ -5,7 +5,7 @@
         </div>
         <div class="item-middle">
             <div class="title">Miiow 猫人 MR207 女士运动内衣</div>
-            <Tag class="tag">运动服饰热度Top1</Tag>
+            <div class="tag">运动服饰热度Top1</div>
             <div class="price">19.8元包邮</div>
             <div class="info">
                 <div class="source">
@@ -39,42 +39,48 @@
     @import '../assets/styles/vars';
 
     .goodsitem {
-        padding: .2rem;
         display: flex;
         width: 100%;
         margin-top: .2rem;
         background-color: #fff;
         height: 3rem;
+        justify-content: space-around;
         align-items: center;
         position: relative;
+        padding:  0.3rem .2rem;
+        /*border: 1px solid red;*/
+        box-sizing: border-box;
         .item-left {
             /*width: 35%;*/
             /*height: 0;*/
             /*overflow: hidden;*/
             /*padding-bottom: 35%;*/
-            width: 2.4rem;
+            /*width: 2.4rem;*/
             /*height: 2.6rem;*/
             /*padding-left: .1rem;*/
             border-radius: .1rem;
             /*<!--position: relative;-->*/
             /*<!--top: 50%; !*偏移*!-->*/
             /*<!--transform: translateY(-50%);-->*/
+            flex: 0 0 2.4rem;
             img {
                 width: 100%;
             }
         }
         .item-middle {
-            height: 2.6rem;
-            margin-left: .15rem;
+            height: 100%;
+            padding: 0 .15rem;
             flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
             .title {
-                font-size: .3rem;
+                font-size: .34rem;
                 font-weight: bold;
-                line-height: .5rem;
-                margin-right: .4rem;
+                line-height: .4rem;
+                margin-right: .2rem;
                 //@include text-ellipsis;
             }
             .tag {
@@ -83,7 +89,7 @@
                 line-height: .3rem;
                 height: .3rem;
                 border-radius: .1rem;
-                width: 2.4rem;
+                /*width: 2.4rem;*/
                 text-align: center;
                 @include text-ellipsis;
             }
@@ -94,8 +100,9 @@
                 @include text-ellipsis;
             }
             .info {
-                padding-right: .6rem;
+                width: 100%;
                 font-size: .2rem;
+                padding-right: .2rem;
                 color: #666;
                 display: flex;
                 justify-content: space-between;
@@ -105,11 +112,18 @@
                 }
             }
         }
-        .item-del {
-            /*float: right;*/
-            position: absolute;
-            top: .2rem;
-            right: .2rem;
+        .item-right {
+            flex: 0 0 .2rem;
+            height: 100%;
+            position: relative;
+            left: -.1rem;
+            .item-del {
+                /*float: right;*/
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
+
     }
 </style>

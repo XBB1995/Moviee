@@ -1,7 +1,7 @@
 <template>
     <div class="home">
-        <home-search></home-search>
         <home-header></home-header>
+        <home-nav></home-nav>
         <keep-alive>
             <router-view></router-view>
         </keep-alive>
@@ -12,8 +12,8 @@
 
 <script>
     // @ is an alias to /src
-    import HomeHeader from '@/views/Home/components/Header.vue'
-    import HomeSearch from '@/views/Home/components/Search.vue'
+    import HomeHeader from '@/components/Header.vue'
+    import HomeNav from '@/views/Home/components/Nav.vue'
     import Footer from '@/components/Footer.vue'
 
     export default {
@@ -23,7 +23,7 @@
         },
         components: {
             HomeHeader,
-            HomeSearch,
+            HomeNav,
             Footer
         }
     }
