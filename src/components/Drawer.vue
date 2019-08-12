@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <van-sticky>
         <div class="nav">
             <van-tabs v-model="active" swipeable class="my-tabs">
                 <van-tab v-for="item in labelList" :title="item">
@@ -68,7 +68,7 @@
                 </div>
             </div>
         </el-drawer>
-    </div>
+    </van-sticky>
 </template>
 
 <script>

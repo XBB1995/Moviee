@@ -48,7 +48,7 @@
         height: .8rem;
         width: 100%;
         background-color: #fff;
-        margin-top: .1rem;
+        /*margin-top: .1rem;*/
         line-height: .7rem;
         position: relative;
         overflow: hidden;

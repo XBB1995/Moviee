@@ -1,11 +1,12 @@
 <template>
     <div class="home">
         <home-header></home-header>
-        <home-nav></home-nav>
+        <van-sticky>
+            <home-nav></home-nav>
+        </van-sticky>
         <keep-alive>
             <router-view></router-view>
         </keep-alive>
-
         <Footer></Footer>
     </div>
 </template>

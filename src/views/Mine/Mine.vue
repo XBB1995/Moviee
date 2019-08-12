@@ -1,6 +1,5 @@
 <template>
     <div class="mine">
-        <mine-header></mine-header>
         <router-view></router-view>
         <Footer></Footer>
     </div>
@@ -8,13 +7,11 @@
 
 <script>
     // @ is an alias to /src
-    import MineHeader from '@/components/Header.vue'
     import Footer from '@/components/Footer.vue'
 
     export default {
         name: 'mine',
         components: {
-            MineHeader,
             Footer
         }
     }
