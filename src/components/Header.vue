@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <div class="img-wrapper">
+        <div class="img-wrapper" @click="showHarden">
             <img src="../../public/logo.png"/>
         </div>
         <div class="header-content">
@@ -31,6 +31,11 @@
             return {
                 visible: false,
                 show: false
+            }
+        },
+        methods: {
+            showHarden() {
+
             }
         }
     }

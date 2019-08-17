@@ -1,9 +1,14 @@
 <template>
-    <div class="wrapper">
-        <cards-list :infoList="getList(imgInfoList, 0)"
-                    @getStatus="ChangeStatus"></cards-list>
-        <cards-list :infoList="getList(imgInfoList, 1)"
-                    @getStatus="ChangeStatus"></cards-list>
+    <div class="rec">
+        <div class="wrapper">
+            <cards-list :infoList="getList(imgInfoList, 0)"
+                        @getStatus="ChangeStatus"></cards-list>
+            <cards-list :infoList="getList(imgInfoList, 1)"
+                        @getStatus="ChangeStatus"></cards-list>
+        </div>
+        <div class="footer">
+            <span>—————— 我是有底线的 ——————</span>
+        </div>
     </div>
 </template>
 
@@ -15,8 +20,7 @@
         name: "rec",
         data() {
             return {
-                imgInfoList: [],
-                currentDate: new Date()
+                imgInfoList: []
             }
         },
         components: {
@@ -45,14 +49,13 @@
                 })
             },
             ChangeStatus(...status) {
-                this.imgInfoList.some(item=>{
-                    if (item.id===status[1]) {
+                this.imgInfoList.some(item => {
+                    if (item.id === status[1]) {
                         item.likeStatus = status[0]
-                        item.count = status[0]?item.count+1:item.count-1
+                        item.count = status[0] ? item.count + 1 : item.count - 1
                         return true
                     }
                 })
-
             }
         },
         mounted() {
@@ -63,10 +66,16 @@
 
 <style scoped lang="scss">
     @import '../../assets/styles/vars';
-
-    .wrapper {
-        display: flex;
-        padding: .1rem;
+    .rec {
+        .wrapper {
+            display: flex;
+            padding: .1rem;
+        }
+        .footer {
+            margin-top: .4rem;
+            text-align: center;
+        }
     }
+
 
 </style>

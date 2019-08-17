@@ -9,7 +9,7 @@
                     <div class="bottom clearfix">
                         <time class="time">{{item.addTime}}</time>
                         <div class="like">
-                            <van-icon :name="changeStatus(item.likeStatus)"
+                            <van-icon :name="changeStatus(item.likeStatus)" :class="{'red': item.likeStatus}"
                                       @click="light(item.likeStatus,item.id)" class="like-icon"></van-icon>
                             <span>{{item.count}}</span>
                         </div>
@@ -59,6 +59,7 @@
         display: flex;
         flex-direction: column;
         margin: 0 .05rem;
+        overflow: auto;
         .card-li {
             margin: .06rem 0;
             .card-content {
@@ -83,10 +84,12 @@
                         top: 50%;
                         right: 0;
                         transform: translateY(-50%);
-
                         .like-icon {
                             font-weight: bold;
                             margin-right: .1rem;
+                            &.red {
+                                color: #f55;
+                            }
                         }
 
                     }
