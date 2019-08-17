@@ -1,12 +1,9 @@
 <template>
     <div class="home">
         <home-header></home-header>
-        <van-sticky>
-            <home-nav></home-nav>
-        </van-sticky>
-        <keep-alive>
-            <router-view></router-view>
-        </keep-alive>
+        <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+            <Drawer></Drawer>
+        </van-pull-refresh>
         <Footer></Footer>
     </div>
 </template>
@@ -14,17 +11,27 @@
 <script>
     // @ is an alias to /src
     import HomeHeader from '@/components/Header.vue'
-    import HomeNav from '@/views/Home/components/Nav.vue'
     import Footer from '@/components/Footer.vue'
+    import Drawer from '@/components/Drawer.vue'
 
     export default {
         name: 'home',
         data() {
-            return {}
+            return {
+                isLoading: false
+            }
+        },
+        methods: {
+            onRefresh() {
+                setTimeout(() => {
+                    this.$toast('刷新成功')
+                    this.isLoading = false
+                }, 500)
+            }
         },
         components: {
             HomeHeader,
-            HomeNav,
+            Drawer,
             Footer
         }
     }
@@ -32,7 +39,6 @@
 
 <style scoped lang="scss">
     .home {
-        /*height: 30rem;*/
-        padding-bottom: 1.5rem;
+        padding: .8rem 0 1.5rem;
     }
 </style>

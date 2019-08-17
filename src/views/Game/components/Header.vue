@@ -1,12 +1,12 @@
 <template>
     <div class="header">
-        Goodsheader
+        Gameheader
     </div>
 </template>
 
 <script>
     export default {
-        name: "GoodsHeader"
+        name: "GameHeader"
     }
 </script>
 

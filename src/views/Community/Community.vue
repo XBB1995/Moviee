@@ -1,8 +1,6 @@
 <template>
     <div class="community">
         <community-header></community-header>
-        <Drawer></Drawer>
-        <router-view></router-view>
         <Footer></Footer>
     </div>
 </template>
@@ -11,14 +9,12 @@
     // @ is an alias to /src
     import CommunityHeader from '@/components/Header.vue'
     import Footer from '@/components/Footer.vue'
-    import Drawer from '@/components/Drawer.vue'
 
     export default {
         name: 'community',
         components: {
             CommunityHeader,
-            Footer,
-            Drawer
+            Footer
         }
     }
 </script>

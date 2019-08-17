@@ -15,28 +15,15 @@ export default new Router({
         {
             path: '/home',
             name: 'home',
-            redirect: '/home/recommend',
-            component: Home,
-            children: [
-                {
-                    path: 'like',
-                    name: 'like',
-                    component: () => import('./views/Home/components/Like.vue')
-                },
-                {
-                    path: 'recommend',
-                    name: 'recommend',
-                    component: () => import('./views/Home/components/Recommend.vue')
-                }
-            ]
+            component: Home
         },
         {
-            path: '/goods',
-            name: 'goods',
+            path: '/game',
+            name: 'game',
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/Goods/Goods.vue')
+            component: () => import(/* webpackChunkName: "about" */ './views/Game/Game.vue')
         },
         {
             path: '/wiki',

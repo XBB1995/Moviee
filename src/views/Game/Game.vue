@@ -1,6 +1,6 @@
 <template>
-    <div class="goods">
-        <goods-header></goods-header>
+    <div class="game">
+        <game-header></game-header>
         <router-view></router-view>
         <Footer></Footer>
     </div>
@@ -8,13 +8,13 @@
 
 <script>
     // @ is an alias to /src
-    import GoodsHeader from '@/components/Header.vue'
+    import GameHeader from '@/components/Header.vue'
     import Footer from '@/components/Footer.vue'
 
     export default {
-        name: 'Goods',
+        name: 'game',
         components: {
-            GoodsHeader,
+            GameHeader,
             Footer
         }
     }
