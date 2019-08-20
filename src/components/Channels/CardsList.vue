@@ -21,6 +21,8 @@
 </template>
 
 <script>
+    import {Debounce} from '../../utils/helper.js'
+
     export default {
         name: "CardsList",
         props: {
@@ -32,18 +34,13 @@
             }
         },
         methods: {
-            light(status, id) {
-                if (this.timer) {
-                    clearTimeout(this.timer)
+            light: Debounce(function (status, id) {
+                if (!status) {
+                    this.$emit('getStatus', true, id)
+                } else {
+                    this.$emit('getStatus', false, id)
                 }
-                this.timer = setTimeout(() => {
-                    if (!status) {
-                        this.$emit('getStatus', true, id)
-                    } else {
-                        this.$emit('getStatus', false, id)
-                    }
-                }, 200)
-            },
+            }, 200),
             changeStatus(status) {
                 return status ? "like" : "like-o"
             }
