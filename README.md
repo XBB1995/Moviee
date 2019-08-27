@@ -11,12 +11,6 @@
   
   地址：https://www.easy-mock.com/project/5d4f6b52bfbd2538192571c7
 
-## 记录 
-1. 完成footer的制作和跳转 完成首页的基本布局 制作item组件
-2. 通过Easy Mock网站提供自定义的接口 
-3. 完成社区页面中的标签页组件的制作,sticky定位,实现增删兴趣项的功能，并使用localStorage实现了状态的存储
-4. 修改首页布局，用不对称的卡片式列表展示新闻动态，实现点赞按钮的防抖
-
 ## 使用到的插件记录或库
 1. vue-awesome-swiper
 2. better-scroll
@@ -24,6 +18,12 @@
 4. Vant
 5. ElementUI
 6. EasyMock 
+
+## 记录 
+1. 完成footer的制作和跳转 完成首页的基本布局 制作item组件
+2. 通过Easy Mock网站提供自定义的接口 
+3. 完成社区页面中的标签页组件的制作,sticky定位,实现增删兴趣项的功能，并使用localStorage实现了状态的存储
+4. 修改首页布局，用不对称的卡片式列表展示新闻动态，实现点赞按钮的防抖
 
 ## 开发中遇到的问题及思考
 
