@@ -6,7 +6,7 @@
             <cards-list :infoList="getList(imgInfoList, 1)"
                         @getStatus="ChangeStatus"></cards-list>
         </div>
-        <div class="footer">
+        <div class="footer" v-show="toBottom">
             <span>—————— 我是有底线的 ——————</span>
         </div>
     </div>
@@ -20,7 +20,8 @@
         name: "rec",
         data() {
             return {
-                imgInfoList: []
+                imgInfoList: [],
+                toBottom: false
             }
         },
         components: {
@@ -76,6 +77,4 @@
             text-align: center;
         }
     }
-
-
 </style>
