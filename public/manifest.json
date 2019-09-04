@@ -1,0 +1,6 @@
+{
+  "name": "dengPu",
+  "short_name": "deng",
+  "start_url": " http://localhost:8081/",
+  "display": "standalone"
+}
