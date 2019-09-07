@@ -4,7 +4,9 @@
 1. 哈登新闻、图片及视频的获取与展示
    1. 不同大小卡片镶嵌式列表展示 √
    2. 卡片的无限下拉实现 
-      1. 考虑原生js实现的方法 根据scrollTop和clientHeight及offsetHeight判断
+      1. 考虑原生js实现的方法 
+         1. 根据 scrollTop + clientHeight > offsetTop 判断
+         2. 根据getBoundingClientRect直接获取元素的大小及位置         bound.top <= clientHeight 判断
       2. 注意增加节流，防止性能的损耗 √
    2. 点赞及消息提示的防抖功能 √
    3. 下拉动态卡片懒加载 √
