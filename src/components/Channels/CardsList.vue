@@ -1,6 +1,6 @@
 <template>
     <ul class="card-ul">
-        <li class="card-li" v-for="item of infoList">
+        <li class="card-li" v-for="item of infoList" :key="item.title">
             <el-card :body-style="{ margin: '0', padding: '0' }" shadow="always">
                 <van-image fit="cover" :src="item.imgUrl"
                            class="image"/>
@@ -22,6 +22,7 @@
 
 <script>
     import {Debounce} from '../../utils/helper.js'
+    import {Throttle} from '../../utils/helper.js'
 
     export default {
         name: "CardsList",
