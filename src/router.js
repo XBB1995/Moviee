@@ -7,8 +7,7 @@ Vue.use(Router)
 export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,
-    routes: [
-        {
+    routes: [{
             path: '/',
             redirect: '/home'
         },
@@ -23,7 +22,7 @@ export default new Router({
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/Game/Game.vue')
+            component: () => import( /* webpackChunkName: "about" */ './views/Game/Game.vue')
         },
         {
             path: '/wiki',
@@ -31,7 +30,7 @@ export default new Router({
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/Wiki/Wiki.vue')
+            component: () => import( /* webpackChunkName: "about" */ './views/Wiki/Wiki.vue')
         },
         {
             path: '/community',
@@ -39,7 +38,12 @@ export default new Router({
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/Community/Community.vue')
+            component: () => import( /* webpackChunkName: "about" */ './views/Community/Community.vue'),
+        },
+        {
+            path: '/more',
+            name: 'more',
+            component: () => import('./views/Community/components/More.vue')
         },
         {
             path: '/mine',
@@ -47,7 +51,7 @@ export default new Router({
             // route level code-splitting
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/Mine/Mine.vue')
+            component: () => import( /* webpackChunkName: "about" */ './views/Mine/Mine.vue')
         },
     ]
 })
