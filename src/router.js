@@ -39,11 +39,13 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             component: () => import( /* webpackChunkName: "about" */ './views/Community/Community.vue'),
-        },
-        {
-            path: '/more',
-            name: 'more',
-            component: () => import('./views/Community/components/More.vue')
+            children: [
+                {
+                    path: 'more',
+                    name: 'more',
+                    component: () => import('./views/Community/components/More.vue')
+                }
+            ]
         },
         {
             path: '/mine',

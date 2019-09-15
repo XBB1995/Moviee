@@ -2,7 +2,7 @@
   <div class="movie">
     <div class="info">
       <span>热门影片</span>
-      <router-link to="/more" class="checkAll" tag="span">查看全部 &gt;</router-link>
+      <router-link to="/community/more" class="checkAll" tag="span">详细信息 &gt;</router-link>
     </div>
     <ul class="ul">
       <li v-for="movie of movieList" :key="movie.collect_count">
@@ -15,6 +15,9 @@
         <div class="title">{{movie.title}}</div>
       </li>
     </ul>
+    <div class="list-wrapper" ref="wrapper">
+      <router-view :movieList="movieList" @ishow="handleListShow"></router-view>
+    </div>
   </div>
 </template>
 
@@ -39,7 +42,15 @@ export default {
         .then(res => {
           const data = res.data;
           this.movieList = data.subjects;
+          // console.log(this.movieList);
         });
+    },
+    handleListShow() {
+      this.$refs.wrapper.scrollIntoView(true)
+      // console.log("get info from module")
+      // console.log(this.$el.scrollTop);
+      // console.log(this.$refs.wrapper.scrollTop);
+      // this.$refs.wrapper.scrollTop = 10
     }
   },
   created() {
@@ -69,6 +80,7 @@ export default {
     display: flex;
     overflow: auto;
     padding: 0.1rem 0;
+    margin-bottom: 0.1rem;
     justify-content: flex-start;
     .image {
       box-sizing: border-box;
@@ -77,8 +89,8 @@ export default {
       position: relative;
       .star {
         position: absolute;
-        left: .12rem;
-        bottom: .06rem;
+        left: 0.12rem;
+        bottom: 0.06rem;
         color: orange;
         font-size: 0.1rem;
       }
@@ -90,6 +102,9 @@ export default {
       overflow: hidden;
       text-overflow: ellipsis;
     }
+  }
+  .list-wrapper {
+    margin-bottom: 1rem;
   }
 }
 </style>
