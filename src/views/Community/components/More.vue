@@ -1,46 +1,82 @@
 <template>
   <div class="more" ref="more">
-    <van-tabs v-model="activeName" animated>
-      <van-tab title="正在热映" name="hot" class="hot">
-        <div class="piaofang">
-          <span>实时票房</span>
-          <span>
-            今日大盘
-            <a>3464.1万&gt;</a>
-          </span>
-        </div>
-        <div class="info">
-          <ul>
-            <li v-for="movie of movieList" :key="movie.collect_count">
-              <movie-card :movieInfo="movie"></movie-card>
-            </li>
-          </ul>
-        </div>
-      </van-tab>
-      <van-tab title="即将上映" name="coming">内容 2</van-tab>
-    </van-tabs>
+    <div class="more-wrapper">
+      <van-tabs v-model="activeName" animated>
+        <van-tab title="正在热映" name="hot" class="hot">
+          <div class="piaofang">
+            <span>实时票房</span>
+            <span>
+              今日大盘
+              <a>3464.1万&gt;</a>
+            </span>
+          </div>
+          <div class="info">
+            <ul
+              class="infinite-list"
+              v-infinite-scroll="loadMore"
+              infinite-scroll-disabled="disabled"
+            >
+              <li v-for="movie of exactMoiveList" :key="movie.collect_count">
+                <movie-card :movieInfo="movie"></movie-card>
+              </li>
+            </ul>
+            <div class="more">
+              <p v-if="loading">加载中</p>
+              <p v-if="noMore">加载完毕</p>
+            </div>
+          </div>
+        </van-tab>
+        <van-tab title="即将上映" name="coming">内容 2</van-tab>
+      </van-tabs>
+    </div>
   </div>
 </template>
 
 <script>
 import MovieCard from "./Card.vue";
 import axios from "axios";
+// better-scroll
+import BScroll from "better-scroll";
 
 export default {
   name: "more",
   data() {
     return {
-      activeName: "hot"
+      activeName: "hot",
+      threshold: 5,
+      loading: false
     };
   },
   props: {
     movieList: Array
   },
+  methods: {
+    loadMore() {
+      this.loading = true;
+      // this.$message("更多影片马上就到~");
+      setTimeout(() => {
+        this.loading = false;
+        this.threshold += 2;
+      }, 1000);
+    }
+  },
   components: {
     MovieCard
   },
+  computed: {
+    exactMoiveList() {
+      return this.movieList.slice(0, this.threshold);
+    },
+    noMore() {
+      return this.threshold >= 10;
+    },
+    disabled() {
+      return this.loading || this.noMore;
+    }
+  },
   mounted() {
-    this.$emit("ishow")
+    this.$emit("ishow");
+    this.scroll = new BScroll(this.$refs.more);
   }
 };
 </script>
@@ -60,6 +96,23 @@ export default {
       }
     }
     .info {
+      .infinite-list {
+        padding: 0;
+        overflow: auto;
+        height: 100%;
+      }
+      .more {
+        padding: 0.1rem;
+        text-align: center;
+        p {
+          &::before {
+            content: "————";
+          }
+          &::after {
+            content: "————";
+          }
+        }
+      }
     }
   }
 }

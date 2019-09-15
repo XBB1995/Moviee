@@ -20,6 +20,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
     "@vue/cli-service": "^3.10.0",
+    "better-scroll": "^1.15.2",
     "node-sass": "^4.9.0",
     "now": "^16.2.0",
     "sass-loader": "^7.1.0",

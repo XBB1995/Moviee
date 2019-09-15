@@ -1,6 +1,16 @@
 {
   "name": "dengPu",
   "short_name": "deng",
-  "start_url": " http://localhost:8081/",
-  "display": "standalone"
+  "background_color": "#fff",
+  "start_url": " http://localhost:8080/",
+  "display": "standalone",
+  "description": "dengPu 各种功能大杂烩 Vue项目",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "105x105",
+      "type": "image/png"
+    }
+  ]
 }

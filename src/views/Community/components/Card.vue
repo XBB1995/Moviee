@@ -118,7 +118,7 @@ export default {
     }
     .details {
       position: absolute;
-      top: 50%;
+      top: 40%;
       transform: translate(0, -50%);
       right: 0.2rem;
       background-color: #f55;

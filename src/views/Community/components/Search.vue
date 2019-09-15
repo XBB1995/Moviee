@@ -10,7 +10,7 @@
         v-model="keywords"
         placeholder="电影名称 | 类别"
       />
-      <button href="javascript:;" class="hot-spot" v-show="!inSearch">
+      <button href="javascript:;" class="hot-spot" v-show="!inSearch" @click="handleCreateFig">
         实时榜单
         <van-icon name="chart-trending-o"></van-icon>
       </button>
@@ -34,6 +34,9 @@ export default {
     },
     handleBlur() {
       this.inSearch = false;
+    },
+    handleCreateFig() {
+      
     }
   }
 };
@@ -50,6 +53,7 @@ export default {
   z-index: 999;
   .search-content {
     width: 90%;
+    height: 0.6rem;
     line-height: 0.6rem;
     .search-input {
       background-color: rgba(0, 0, 0, 0.05);
@@ -79,7 +83,7 @@ export default {
       background: transparent;
     }
     .hot-spot {
-      font-size: .3rem;
+      font-size: 0.3rem;
       font-weight: bold;
     }
     .search-cancel-btn {
