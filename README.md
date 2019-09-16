@@ -30,7 +30,7 @@
 + javaScript Vue全家桶
 + CSS(3) Sass
 + axios 
-+ echarts
++ ECharts
 + (plus) PWA: Manifest、Service Worker (未实现)
 
 ## 记录 
