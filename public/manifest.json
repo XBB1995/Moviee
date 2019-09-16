@@ -1,15 +1,30 @@
 {
   "name": "dengPu",
   "short_name": "deng",
-  "background_color": "#fff",
-  "start_url": " http://localhost:8080/",
+  "background_color": "#f55",
+  "start_url": " http://192.168.2.140:8080/",
   "display": "standalone",
   "description": "dengPu 各种功能大杂烩 Vue项目",
   "theme_color": "#fff",
   "icons": [
     {
       "src": "logo.png",
-      "sizes": "105x105",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
       "type": "image/png"
     }
   ]

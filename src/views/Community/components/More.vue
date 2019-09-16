@@ -1,5 +1,5 @@
 <template>
-  <div class="more" ref="more">
+  <div class="more">
     <div class="more-wrapper">
       <van-tabs v-model="activeName" animated>
         <van-tab title="正在热映" name="hot" class="hot">
@@ -26,7 +26,8 @@
             </div>
           </div>
         </van-tab>
-        <van-tab title="即将上映" name="coming">内容 2</van-tab>
+        <van-tab title="详细评分" name="coming">
+        </van-tab>
       </van-tabs>
     </div>
   </div>
@@ -35,8 +36,6 @@
 <script>
 import MovieCard from "./Card.vue";
 import axios from "axios";
-// better-scroll
-import BScroll from "better-scroll";
 
 export default {
   name: "more",
@@ -76,7 +75,6 @@ export default {
   },
   mounted() {
     this.$emit("ishow");
-    this.scroll = new BScroll(this.$refs.more);
   }
 };
 </script>

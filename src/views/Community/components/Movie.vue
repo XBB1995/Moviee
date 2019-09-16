@@ -5,7 +5,7 @@
       <router-link to="/community/more" class="checkAll" tag="span">详细信息 &gt;</router-link>
     </div>
     <ul class="ul">
-      <li v-for="movie of movieList" :key="movie.collect_count">
+      <li v-for="movie of movieList" :key="movie.id" @click="getRatingDetails(movie)">
         <div class="image">
           <van-image :src="movie.images.small" fit="scale-down" :width="imgW" :height="imgH" />
           <div class="star-wrapper">
@@ -15,6 +15,7 @@
         <div class="title">{{movie.title}}</div>
       </li>
     </ul>
+    <com-rating :rating="rating"></com-rating>
     <div class="list-wrapper" ref="wrapper">
       <router-view :movieList="movieList" @ishow="handleListShow"></router-view>
     </div>
@@ -23,15 +24,25 @@
 
 <script>
 import axios from "axios";
+import ComRating from "../components/Rating.vue";
 
 export default {
   name: "movie",
+  components: {
+    ComRating
+  },
   data() {
     return {
       movieList: [],
       imgW: "2.2rem",
-      imgH: "3rem"
+      imgH: "3rem",
+      rating: null
     };
+  },
+  watch: {
+    movieList(newVal, oldVal) {
+      this.rating = this.movieList[0].rating || {}
+    }
   },
   methods: {
     getMovieInfo() {
@@ -46,11 +57,14 @@ export default {
         });
     },
     handleListShow() {
-      this.$refs.wrapper.scrollIntoView(true)
+      this.$refs.wrapper.scrollIntoView(true);
       // console.log("get info from module")
       // console.log(this.$el.scrollTop);
       // console.log(this.$refs.wrapper.scrollTop);
       // this.$refs.wrapper.scrollTop = 10
+    },
+    getRatingDetails(movie) {
+      this.rating = movie.rating;
     }
   },
   created() {
@@ -87,6 +101,7 @@ export default {
       height: 3rem;
       width: 2.2rem;
       position: relative;
+      box-shadow: 0 .05rem .05rem #aaa;
       .star {
         position: absolute;
         left: 0.12rem;
@@ -96,8 +111,9 @@ export default {
       }
     }
     .title {
-      margin-top: 0.06rem;
-      font-size: 0.1rem;
+      width: 2.2rem;
+      margin-top: 0.12rem;
+      font-size: 0.26rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

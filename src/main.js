@@ -13,13 +13,14 @@ import 'element-ui/lib/theme-chalk/index.css'
 // Vant
 import Vant from 'vant'
 import 'vant/lib/index.css'
+// echarts
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 
 Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(Vant)
-
-
 
 new Vue({
   router,

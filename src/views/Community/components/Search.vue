@@ -10,8 +10,8 @@
         v-model="keywords"
         placeholder="电影名称 | 类别"
       />
-      <button href="javascript:;" class="hot-spot" v-show="!inSearch" @click="handleCreateFig">
-        实时榜单
+      <button class="hot-spot" v-show="!inSearch" @click="handleCreateFig">
+        Top指数
         <van-icon name="chart-trending-o"></van-icon>
       </button>
       <button class="search-cancel-btn" v-show="inSearch">取消</button>

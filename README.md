@@ -19,7 +19,8 @@
    1. 增加过渡效果的动态搜索框 √
    2. 热门影片的展示及详情页的制作
    3. 根据获取到的观影情况绘制影片热度折线图
-   4. 点击详细信息后跳转路由，卡片组件的复用并自动移动至屏幕顶端 √
+   4. 使用echarts绘制电影评分图 √
+   5. 点击详细信息后跳转路由，卡片组件的复用并自动移动至屏幕顶端 √
 
 *暂时用手动设置后的EasyMock上的端口来代替真实的数据*
   
@@ -29,15 +30,8 @@
 + javaScript Vue全家桶
 + CSS(3) Sass
 + axios 
++ echarts
 + (plus) PWA: Manifest、Service Worker (未实现)
-
-## 使用到的插件记录或库
-1. vue-awesome-swiper
-2. better-scroll
-3. JSONPlaceholder
-4. Vant
-5. ElementUI
-6. EasyMock 
 
 ## 记录 
 1. 完成footer的制作和跳转 完成首页的基本布局 制作item组件
@@ -74,3 +68,8 @@
 ### 切换至子子路由时 由子路由在mounted钩子函数中向父组件emit消息，将内容移至当前视口的顶端
 1. 使用scrollIntoView方法 推荐
 2. 直接DOM操作调整scrollTop的数值
+### 在使用ref和$refs获取dom对象时，需要注意是否获取组件内部的dom（$refs中为空）！！！
+### echarts的使用
+1. 全局注入 类似总线的方式 Vue.prototype.$echarts = echarts
+2. 在评分子组件通过props获取到最新的评分数据后，需要通过watch动态监控rating，动态更新评分图
+3. **思考** 多个echarts是否会影响性能？
