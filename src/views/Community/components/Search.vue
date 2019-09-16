@@ -61,6 +61,7 @@ export default {
       width: 50%;
       transition: width 0.4s ease;
       text-indent: 0.6rem;
+      font-size: .26rem;
       &:focus {
         width: 100%;
         transition: width 0.4s ease;

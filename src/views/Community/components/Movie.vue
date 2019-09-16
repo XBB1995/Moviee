@@ -85,9 +85,12 @@ export default {
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
+    span {
+      font-size: .3rem;
+    }
     .checkAll {
       color: #999;
-      font-size: 0.1rem;
+      font-size: 0.28rem;
     }
   }
   .ul {
@@ -107,13 +110,13 @@ export default {
         left: 0.12rem;
         bottom: 0.06rem;
         color: orange;
-        font-size: 0.1rem;
+        font-size: 0.26rem;
       }
     }
     .title {
       width: 2.2rem;
       margin-top: 0.12rem;
-      font-size: 0.26rem;
+      font-size: 0.3rem;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

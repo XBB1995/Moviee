@@ -1,6 +1,6 @@
 {
   "name": "Moviee",
-  "short_name": "moviee",
+  "short_name": "Moviee",
   "background_color": "#f55",
   "start_url": " http://192.168.2.140:8080/",
   "display": "standalone",

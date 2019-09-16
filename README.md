@@ -73,3 +73,5 @@
 1. 全局注入 类似总线的方式 Vue.prototype.$echarts = echarts
 2. 在评分子组件通过props获取到最新的评分数据后，需要通过watch动态监控rating，动态更新评分图
 3. **思考** 多个ECharts是否会影响性能？
+### 真机调试时 IOS对于webp格式的图片支持不佳 图片无法显示
+1. 考虑使用webpjs库将webp类型的图片转化成浏览器可识别的格式（貌似被墙）

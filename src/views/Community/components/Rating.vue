@@ -1,7 +1,7 @@
 <template>
   <div class="rating">
     <span v-show="!this.rating">网络不太好呢~</span>
-    <div  v-show="this.rating" class="mychart"></div>
+    <div class="mychart"></div>
   </div>
 </template>
 
@@ -83,15 +83,14 @@ export default {
 <style scoped lang="scss">
 .rating {
   text-align: center;
+  margin: .2rem 0;
   span {
     color: lightcoral;
-    font-size: 0.2rem;
+    font-size: 0.3rem;
     font-weight: bold;
     padding: .2rem;
   }
   .mychart {
-    padding: 0 0.2rem;
-    width: 100%;
     height: 3rem;
   }
 }
