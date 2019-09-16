@@ -1,10 +1,10 @@
 {
-  "name": "dengPu",
-  "short_name": "deng",
+  "name": "Moviee",
+  "short_name": "moviee",
   "background_color": "#f55",
   "start_url": " http://192.168.2.140:8080/",
   "display": "standalone",
-  "description": "dengPu 各种功能大杂烩 Vue项目",
+  "description": "Moviee 各种功能大杂烩 Vue项目",
   "theme_color": "#fff",
   "icons": [
     {
