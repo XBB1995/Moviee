@@ -27,7 +27,7 @@
   地址：https://www.easy-mock.com/project/5d4f6b52bfbd2538192571c7
 
 # 技术栈
-+ javaScript Vue全家桶
++ javaScript Vue Vue-router
 + CSS(3) Sass
 + axios 
 + ECharts
@@ -75,5 +75,10 @@
 2. 在评分子组件通过props获取到最新的评分数据后，需要通过watch动态监控rating，动态更新评分图
 3. **思考** 多个ECharts是否会影响性能？
 ### 真机调试时 IOS对于webp格式的图片支持不佳 图片无法显示
-1. 考虑使用webpjs库将webp类型的图片转化成浏览器可识别的格式（貌似被墙）科学上网后 该库无效
+1. 考虑使用webpjs库将webp类型的图片转化成浏览器可识别的格式（貌似被墙）
+2. 使用IP地址和IOS端及Android端均出现相同问题 可能并不是webp格式导致图片无法显示
 ### 注意组件化 减少耦合 如最热电影和Top10电影列表以组件形式编写 减少重复逻辑和代码的编写
+### 非父子组件间传值时 也可以使用总线的方式来实现
+1. Vue.prototype.bus = new Vue() **思考**有什么缺点？？？
+2. this.bus.$emit("customevent", "data") 传递数据
+3. this.bus.$on("customevent", (arg) => {}) 监听事件
