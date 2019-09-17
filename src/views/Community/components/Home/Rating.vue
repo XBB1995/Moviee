@@ -1,6 +1,6 @@
 <template>
   <div class="rating">
-    <span v-show="!this.rating">网络不太好呢~</span>
+    <!-- <span v-show="!this.rating">网络不太好呢~</span> -->
     <div class="mychart"></div>
   </div>
 </template>
@@ -23,8 +23,34 @@ export default {
   },
   methods: {
     createFig() {
-      // 日常访问被限制时的背景图
+      // 日常访问被限制时的占位图
       if (!this.rating) {
+        let res = [];
+        let i = 0;
+        while (i < 5) {
+          res[i++] = Math.floor(Math.random() * 1000 + 1);
+        }
+        let option = {
+          title: {
+            text: "没网鸭",
+            subtext: "ORZ",
+            x: "left"
+          },
+          series: [
+            {
+              name: "占位图",
+              type: "pie",
+              radius: ["50%", "80%"],
+              data: res,
+              label: {
+                normal: {
+                  show: false
+                }
+              }
+            }
+          ]
+        };
+        this.mychart.setOption(option);
         return;
       }
       // 评分绘图
@@ -83,15 +109,16 @@ export default {
 <style scoped lang="scss">
 .rating {
   text-align: center;
-  margin: .2rem 0;
+  margin: 0.2rem 0;
   span {
     color: lightcoral;
     font-size: 0.3rem;
     font-weight: bold;
-    padding: .2rem;
+    padding: 0.2rem;
   }
   .mychart {
     height: 3rem;
+    // background-color: pink;
   }
 }
 </style>

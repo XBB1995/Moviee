@@ -21,6 +21,8 @@ Vue.use(VueAwesomeSwiper, /* { default global options } */)
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.use(Vant)
+// 总线
+Vue.prototype.bus = new Vue()
 
 new Vue({
   router,

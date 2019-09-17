@@ -10,7 +10,7 @@
         v-model="keywords"
         placeholder="电影名称 | 类别"
       />
-      <button class="hot-spot" v-show="!inSearch" @click="handleCreateFig">
+      <button class="hot-spot" v-show="!inSearch" @click="handleTopBtn">
         Top指数
         <van-icon name="chart-trending-o"></van-icon>
       </button>
@@ -35,8 +35,9 @@ export default {
     handleBlur() {
       this.inSearch = false;
     },
-    handleCreateFig() {
-      
+    handleTopBtn() {
+      // 通过bus总线传递数据 通过自定义事件传递参数
+      this.bus.$emit("checkToTop", "top")
     }
   }
 };

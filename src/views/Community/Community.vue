@@ -9,8 +9,8 @@
 <script>
 // @ is an alias to /src
 import Footer from "@/components/Footer.vue";
-import HeadSearch from "./components/Search.vue";
-import ComMovie from "./components/Movie.vue";
+import HeadSearch from "./components/Home/Search.vue";
+import ComMovie from "./components/Home/Movie.vue";
 
 export default {
   name: "community",

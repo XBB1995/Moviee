@@ -13,13 +13,21 @@
       <div class="info">
         <div class="tag">
           标签:
-          <van-tag v-for="(tag, index) of movieInfo.genres" :key="index"
-          round plain color="#f55" class="tags">{{tag}}</van-tag>
+          <van-tag
+            v-for="(tag, index) of movieInfo.genres"
+            :key="index"
+            round
+            plain
+            color="#f55"
+            class="tags"
+          >{{tag}}</van-tag>
         </div>
         <div>
           <span>值得看 74%</span>
         </div>
-        <button class="details">影评</button>
+        <router-link :to="/detail/ + movieInfo.id">
+          <div class="details">影评</div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -50,7 +58,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../../../assets/styles/vars";
+@import "../../../../assets/styles/vars";
 
 .card {
   display: flex;
@@ -71,7 +79,7 @@ export default {
   .item-middle {
     border-bottom: 1px solid #f55;
     height: 100%;
-    padding: .1rem 0.15rem;
+    padding: 0.1rem 0.15rem;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -111,9 +119,9 @@ export default {
       justify-content: space-between;
       align-items: center;
       .tag {
-          .tags {
-              margin-left: .1rem;
-          }
+        .tags {
+          margin-left: 0.1rem;
+        }
       }
     }
     .details {

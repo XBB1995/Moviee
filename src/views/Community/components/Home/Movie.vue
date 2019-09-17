@@ -1,7 +1,7 @@
 <template>
   <div class="movie">
     <div class="info">
-      <span>热门影片</span>
+      <span>正在热映</span>
       <router-link to="/community/more" class="checkAll" tag="span">详细信息 &gt;</router-link>
     </div>
     <ul class="ul">
@@ -17,14 +17,14 @@
     </ul>
     <com-rating :rating="rating"></com-rating>
     <div class="list-wrapper" ref="wrapper">
-      <router-view :movieList="movieList" @ishow="handleListShow"></router-view>
+      <router-view :movieList="movieList" :top="top" @ishow="handleListShow"></router-view>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import ComRating from "../components/Rating.vue";
+import ComRating from "../Home/Rating.vue";
 
 export default {
   name: "movie",
@@ -34,6 +34,7 @@ export default {
   data() {
     return {
       movieList: [],
+      top: [],
       imgW: "2.2rem",
       imgH: "3rem",
       rating: null
@@ -41,7 +42,7 @@ export default {
   },
   watch: {
     movieList(newVal, oldVal) {
-      this.rating = this.movieList[0].rating || {}
+      this.rating = this.movieList[0].rating || {};
     }
   },
   methods: {
@@ -53,7 +54,7 @@ export default {
         .then(res => {
           const data = res.data;
           this.movieList = data.subjects;
-          // console.log(this.movieList);
+          console.log(this.movieList);
         });
     },
     handleListShow() {
@@ -65,16 +66,27 @@ export default {
     },
     getRatingDetails(movie) {
       this.rating = movie.rating;
+    },
+    getTop() {
+      axios
+        .get(
+          "https://www.easy-mock.com/mock/5d285a292b88e21970e06f77/example/api/getTop250"
+        )
+        .then(res => {
+          const data = res.data;
+          this.top = data.subjects;
+        });
     }
   },
   created() {
     this.getMovieInfo();
+    // this.getTop();
   }
 };
 </script>
 
 <style scoped lang="scss">
-@import "../../../assets/styles/vars";
+@import "../../../../assets/styles/vars";
 
 .movie {
   height: 100%;
@@ -86,7 +98,7 @@ export default {
     align-items: center;
     font-weight: bold;
     span {
-      font-size: .3rem;
+      font-size: 0.3rem;
     }
     .checkAll {
       color: #999;
@@ -104,7 +116,7 @@ export default {
       height: 3rem;
       width: 2.2rem;
       position: relative;
-      box-shadow: 0 .05rem .05rem #aaa;
+      box-shadow: 0 0.05rem 0.05rem #aaa;
       .star {
         position: absolute;
         left: 0.12rem;

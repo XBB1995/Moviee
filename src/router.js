@@ -43,9 +43,17 @@ export default new Router({
                 {
                     path: 'more',
                     name: 'more',
-                    component: () => import('./views/Community/components/More.vue')
+                    component: () => import('./views/Community/components/Home/More.vue')
                 }
             ]
+        },
+        {
+            path: '/detail/:id',
+            name: 'detail',
+            // route level code-splitting
+            // this generates a separate chunk (about.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: () => import( /* webpackChunkName: "about" */ './views/Community/components/Card/Detail.vue')
         },
         {
             path: '/mine',
