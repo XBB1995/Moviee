@@ -13,10 +13,10 @@
           <p class="content">{{comment.body}}</p>
           <div class="footer">
             <span>
-              <van-icon name="fire-o" />亮了(11)
+              <van-icon name="fire-o" />亮了(113)
             </span>
             <span>
-              <van-icon name="comment-o" />评论(2)
+              <van-icon name="comment-o" />评论(23)
             </span>
             <span>
               <van-icon name="envelop-o" />回复
