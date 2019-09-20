@@ -58,6 +58,7 @@ export default {
         });
     },
     handleListShow() {
+      // 点击后自动移入视口顶部平齐
       this.$refs.wrapper.scrollIntoView(true);
       // console.log("get info from module")
       // console.log(this.$el.scrollTop);
@@ -79,8 +80,9 @@ export default {
     }
   },
   created() {
+      // 异步获取电影信息
     this.getMovieInfo();
-    // this.getTop();
+    this.getTop();
   }
 };
 </script>

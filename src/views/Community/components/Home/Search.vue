@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <div class="search-content">
+    <div class="search-header">
       <span class="iconfont icon-left">&#xe791;</span>
       <input
         type="text"
@@ -15,6 +15,15 @@
         <van-icon name="chart-trending-o"></van-icon>
       </button>
       <button class="search-cancel-btn" v-show="inSearch">取消</button>
+    </div>
+    <div class="search-content" ref="content">
+      <ul>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+        <li>123</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -31,13 +40,15 @@ export default {
   methods: {
     handleFocus() {
       this.inSearch = true;
+      this.$refs.content.style.display = "block";
     },
     handleBlur() {
       this.inSearch = false;
+      this.$refs.content.style.display = "none";
     },
     handleTopBtn() {
       // 通过bus总线传递数据 通过自定义事件传递参数
-      this.bus.$emit("checkToTop", "top")
+      this.bus.$emit("checkToTop", "top");
     }
   }
 };
@@ -52,7 +63,7 @@ export default {
   padding: 0.1rem 0.3rem;
   position: fixed;
   z-index: 999;
-  .search-content {
+  .search-header {
     width: 90%;
     height: 0.6rem;
     line-height: 0.6rem;
@@ -62,7 +73,7 @@ export default {
       width: 50%;
       transition: width 0.4s ease;
       text-indent: 0.6rem;
-      font-size: .26rem;
+      font-size: 0.26rem;
       &:focus {
         width: 100%;
         transition: width 0.4s ease;
@@ -79,8 +90,7 @@ export default {
     .search-cancel-btn {
       color: #f55;
       position: absolute;
-      top: 0;
-      bottom: 0;
+      top: 0.1rem;
       right: 0.3rem;
       background: transparent;
     }
@@ -91,6 +101,12 @@ export default {
     .search-cancel-btn {
       color: #999;
     }
+  }
+  .search-content {
+    display: none;
+  }
+  .active {
+    display: block;
   }
 }
 </style>
