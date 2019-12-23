@@ -60,6 +60,7 @@ export default {
     }
   },
   computed: {
+    // 计算属性 修改返回的评价列表
     selectedCommentsList() {
       return this.commentsList.map(comment => {
         if (comment.id <= 10) return true;
@@ -86,7 +87,7 @@ export default {
     width: 100%;
     background-color: #fff;
     box-sizing: border-box;
-    padding: 0 .3rem;
+    padding: 0 0.3rem;
     .title {
       font-weight: bold;
       margin-left: 50%;

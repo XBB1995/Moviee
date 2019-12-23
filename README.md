@@ -85,3 +85,5 @@
 1. Vue.prototype.bus = new Vue() **思考**有什么缺点？？？
 2. this.bus.$emit("customevent", "data") 传递数据
 3. this.bus.$on("customevent", (arg) => {}) 监听事件
+### 2019.12.23 重启项目
+1. 复习回顾Vue
