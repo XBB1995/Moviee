@@ -23,7 +23,7 @@
     "better-scroll": "^1.15.2",
     "echarts": "^4.2.1",
     "eslint": "^6.4.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "now": "^16.2.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10",
