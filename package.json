@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.10.0",
-    "@vue/cli-service": "^3.10.0",
+    "@vue/cli-service": "^5.0.8",
     "better-scroll": "^1.15.2",
     "echarts": "^4.2.1",
     "eslint": "^6.4.0",
